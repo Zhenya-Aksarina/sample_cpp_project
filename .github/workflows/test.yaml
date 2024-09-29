@@ -6,7 +6,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        
       - name: Compile code
-        run: g++ main.cpp my_add.cpp -o main
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake
+          mkdir build
+          cmake -B build -S .
+          cmake --build build
+          
       - name: Run application
-        run: ./main 4 6
+        run: ./build/main 4 6
+
