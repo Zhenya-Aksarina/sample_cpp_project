@@ -4,6 +4,9 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      -uses: actions/checkout@v4
-      -run: g++ main.cpp my_add.cpp -o main
-      -run: ./main 4 6
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Compile code
+        run: g++ main.cpp my_add.cpp -o main
+      - name: Run application
+        run: ./main 4 6
