@@ -16,5 +16,5 @@ jobs:
           cmake --build build
           
       - name: Run application
-        run: ./build/main 4 6
+        run: ./build/tests
 
